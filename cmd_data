@@ -1,0 +1,27 @@
+
+
+
+
+libsvm/svm-scale -s HwData/scale.txt HwData/unscaled.train > HwData/scaled.train
+
+libsvm/svm-scale -r HwData/scale.txt HwData/unscaled.test > HwData/scaled.test
+
+
+
+libsvm/svm-train -t 1 -d 1 -c 1 HwData/Output/Scaled/train.scaled.txt HwData/Output/Model/model.txt > HwData/Output/Model/model.log.txt
+
+libsvm/svm-predict HwData/Output/Scaled/test.scaled.txt HwData/Output/Model/model.txt HwData/Output/Prediction/pred.txt > HwData/Output/Prediction/pred.log.txt
+
+
+
+C5D
+
+libsvm/svm-scale -s HwDataC5D/d4/scale.txt HwDataC5D/d4/unscaled.train > HwDataC5D/d4/scaled.train
+
+libsvm/svm-scale -r HwDataC5D/d4/scale.txt HwDataC5D/d4/unscaled.test > HwDataC5D/d4/scaled.test
+
+
+libsvm/svm-train -t 1 -d 4 -c 1024 HwDataC5D/scaled.train HwDataC5D/scaled.train.model > HwDataC5D/scaled.train.model.log
+
+libsvm/svm-predict HwDataC5D/scaled.test HwDataC5D/scaled.train.model HwDataC5D/scaled.test.pred > HwDataC5D/scaled.test.pred.log
+
